@@ -1,0 +1,116 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{datetime}
+\usepackage{enumerate}
+\usepackage{textcomp}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\graphicspath{ {./images/} }
+   
+\title{\bf \Large ASSIGNMENT 4}
+\author{Xinhao Luo}
+\date{\today}
+
+\def\math#1{$#1$}
+
+\setlength{\textheight}{8.5in}
+\setlength{\textwidth}{6.5in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\voffset0.0in
+
+\begin{document}
+\maketitle
+\medskip
+
+\section{Exercise 2.4}
+
+\begin{enumerate}[a)]
+    \item Let's set the input matrix X as 
+        \begin{equation}
+            X = \begin{bmatrix}
+                    1 & 0 & 0 & \dots & 0 \\
+                    1 & 1 & 0 & \dots & 0 \\
+                    1 & 0 & 1 & \dots & 0 \\
+                    \vdots & \vdots & \vdots & \vdots & \vdots\\
+                    1 & 0 & 0 & \dots & 1
+                \end{bmatrix}
+        \end{equation}  
+    where X is a non-singular matrix (square matrix) of \math{(d + 1) * (d + 1)}, so \math{X} is invertible.  \\
+     As X is a invertible, so we may compute \math{X^{-1}} via \math{w = \math{X}^{-1}y}, and we have \math{Xw = XX^{-1}y = y}, where \math{y} is any dichotomy. For any dichotomy there is a solution \math{w}, thus any dichotomy on these data points can be shattered, \math{d_{vc} \geq d + 1}.
+    \item Since any new vector will be linearly dependent of the \math{d + 1} vector, there will always be \math{x_{d + 2} = c_0x_0 + c_1x_1 + ... + c_{d + 1}x_{d + 1}}. If we have a dichotomy that \math{w^Tx_nc_n < 0}, then \math{sign(w^Tx_{d + 2})} will always be -1, and part of the dichotomy (+1) cannot be implemented. Thus for \math{N \geq d + 2}, \math{m_H(N) < 2^N}, which leads to \math{d_{vc} \leq d + 1}
+\end{enumerate}
+
+\section{Problem 2.3}
+
+\begin{enumerate}[a)]
+    \item For N points, the line has split by \math{N + 1} region, for each of the positive and negative e rays, so the max number of dichotomies is \math{2 * (N + 1) - 2 = 2N} (-2 exclude all positive/negative points situation being counted twice on the \math{-\infty, \infty} region). With \math{m_H(N) = 2N}, we have:
+        \begin{itemize}
+            \item \math{m_H(2) = 4 = 2^2}
+            \item \math{m_H(3) = 6 < 2^3}
+        \end{itemize}
+    Thus, the \math{d_{vc} = 2}
+    \item There are two cases:
+        \begin{enumerate}[1)]
+            \item If the interval covers parts of the rightmost the leftmost end, then the count is the same as part a), \math{2N}
+            \item If the interval is completely within the \math{N - 1} range, then the number of dichotomies is \math{2 * { N - 1 \choose 2 } = (N - 1) * (N - 2)}
+        \end{enumerate}
+        Thus, we have \math{m_H(N) = (N - 1)(N - 2) + 2N = N^2 - N + 2}, and we will have
+        \begin{itemize}
+            \item \math{m_H(3) = 8 = 2^3}
+            \item \math{m_H(4) = 14 < 2^4}
+        \end{itemize}
+        Thus, \math{d_vc = 3}
+    \item This case has the same pattern of the positive interval (Example 2.2 Case 2), where each point can be assigned to a real number and t he concentric sphere is corresponded to the positive interval over the real number values. \math{d_{vc} = 2}
+\end{enumerate}
+
+\section{Problem 2.8}
+
+A growth function with break point can be bonded by a polynomial function of N or if it does not have a break point, it would be \math{2^N}. Thus, \math{1 + N}, \math{1 + N + \frac{N(N - 1)}{2}}, \math{2^N} are possible grow functions. 
+
+The rest does not satisfied the bound: 
+
+\begin{itemize}
+    \item [\math{2^{\sqrt{N}}}] We will have \math{m_H(1) = 2 = 2^1} and \math{m_H(2) = 2 < 2^2}, but \math{m(20) \nless 20^{2 - 1} + 1}
+    \item [\math{2^{N / 2}}] We will have \math{m_H(0) = 1 = 2^1} and \math{m_H(1) < 2^1}, but \math{m(3) \nless 3^{1 - 1} + 1}
+    \item [(3)] For \math{1 + N + \frac{N(N - 1)(N - 2)}{6}}, We will have \math{m_H(1) = 2 = 2^1} and \math{m_H(2) = 3 < 2^2}, but \math{m(3) \nless 2^{2 - 1} + 1}
+\end{itemize}
+
+\section{Problem 2.10}
+
+We may consider it as two groups of N points, so that for each group, the max number of dichotomies is \math{m_H(N)}. When it comes together of 2N points, \math{m_H(2N)} is at most \math{m_H(N) * m_H(N)}. Thus we have \math{m_H(2N) \leq m_H(N)^2}
+
+The bound will then be: 
+
+\begin{equation}
+    E_{out}(g) \leq E_{in} + \sqrt{\frac{8}{N}ln(\frac{4m_H(N)^2}{\rho})}
+\end{equation}
+
+\section{Problem 2.12}
+
+From 2.13, we know that 
+
+\begin{equation}
+    N \geq \frac{8}{\epsilon^2}ln(\frac{4((2N)^{d_{vc}} + 1)}{\delta})
+\end{equation}
+
+Here we have \math{d_{vc} = 10}, \math{\epsilon = 0.05}, \math{\delta = 1 - 0.95 = 0.05}, and set \math{N = 10000}. Thus: 
+
+\begin{equation}
+    \begin{split}
+        N & \geq \frac{8}{0.05^2}ln(\frac{4((2 * 10000)^{10} + 1)}{0.05}) = 330935 \\
+        N & \geq \frac{8}{0.05^2}ln(\frac{4((2 * 330935)^{10} + 1)}{0.05}) = 442913 \\
+        N & \geq \frac{8}{0.05^2}ln(\frac{4((2 * 442913)^{10} + 1)}{0.05}) = 452240 \\
+        N & \geq \frac{8}{0.05^2}ln(\frac{4((2 * 452240)^{10} + 1)}{0.05}) = 452907 \\
+        N & \geq \frac{8}{0.05^2}ln(\frac{4((2 * 452907)^{10} + 1)}{0.05}) = 452954 \\
+        N & \geq \frac{8}{0.05^2}ln(\frac{4((2 * 452954)^{10} + 1)}{0.05}) = 452957 \\
+        N & \geq \frac{8}{0.05^2}ln(\frac{4((2 * 452957)^{10} + 1)}{0.05}) = 452957
+    \end{split}
+\end{equation}
+
+So we need \math{N \geq 452957}
+
+\end{document}

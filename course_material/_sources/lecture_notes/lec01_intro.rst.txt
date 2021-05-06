@@ -1,0 +1,71 @@
+Lecture Information
+=========================================================
+
+People
+------
+
+-  Instructor: Uzma Mushtaque
+
+-  TAs and programming mentors:  See course Syllabus
+
+Learning Outcomes
+-----------------
+
+#. Develop an understanding of the limits to which information can be learned from data, and how. 
+
+#. Be able to: implement, as well as critique basic models of learning from data.
+#. Formulate a learning problem precisely, in terms of inputs and outputs; select a learning model and algorithm, run it on the data, and interpret the results; provide some measures of how effective the learning was
+
+#. Demonstrate an understanding of application of
+   ML to real-world problems.
+
+Textbook
+--------
+
+-  *Learning From Data by Abu-Mostafa, Magdon-Ismail, Lin.* 
+
+   -  Available in e-book form
+
+
+Website and Online Resources
+-----------------------------
+
+-  Course notes will be posted on Submitty.
+
+-  Submitty will be used for posting homework assignments, and as a
+   public discussion site:
+
+       https://submitty.cs.rpi.edu
+       
+   You will be automatically added when you enroll. Let an instructor or TA know if you cannot log into this site more than **48 hours** after you receive notice from the registrar that you are enrolled. The site is updated daily, not immediately, so there might be some lag.
+
+
+Other items from the syllabus
+-----------------------------
+
+-  Course Content Delivery
+
+   -  Pre-recorded Lectures are available at https://www.youtube.com/c/DatascienceConcepts.
+   -  You are welcome to watch those at your own convenience OR attend lecture (TF 10:10am to 12:00 pm) via WebEx (https://rensselaer.webex.com/meet/mushtu).
+   -  During the Lecture, I will play the pre-recorded lectures. Each segment will be about 15-20 minutes long.
+   -  After each segment, I will summarize the key points and take questions and/or clarify doubts if any.
+   -  The reason behind doing this is to minimize any confusions that may arise by watching the lectures all by yourself.
+   -  Attending lectures is not mandatory but as mentioned above this will be a good opportunity for interaction and discussion.
+   -  Every Tuesday, I will go over the homework posted for that week. This will provide you guidance on what is expected on each homework.
+
+-  Office hours: Friday 12- 1 pm at https://rensselaer.webex.com/meet/mushtu
+
+-  Requirements and grading: Homework assignments ONLY (for online version of the course)
+
+-  Appealing grades
+
+-  Class attendance and participation; lecture notes
+
+-  Homework late policy:
+
+   - 4 LATE DAYS FOR THE WHOLE SEMESTER
+   - 2 LATE DAYS ON ANY ONE ASSIGNMENT
+
+-  Academic integrity
+
+-  Other exceptions: report to me right now or as soon as you know

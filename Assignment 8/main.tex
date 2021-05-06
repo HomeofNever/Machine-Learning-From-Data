@@ -1,0 +1,102 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{datetime}
+\usepackage{enumerate}
+\usepackage{textcomp}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\graphicspath{ {./images/} }
+   
+\title{\bf \Large ASSIGNMENT 8}
+\author{Xinhao Luo}
+\date{\today}
+
+\def\math#1{$#1$} 
+
+\setlength{\textheight}{8.5in}
+\setlength{\textwidth}{6.5in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\voffset0.0in
+
+\begin{document}
+\maketitle
+\medskip
+
+\section{Exercise 4.3}
+\begin{enumerate}[a)]
+    \item if we have a fixed \math{H}, and our complexity of \math{f} increase, the deterministic noise will go up. Since the model we have can't identify noise, we will be more likely to overfit.
+    \item If \math{f} is fixed and we decrease the complexity of \math{H}, we may have:
+        \begin{enumerate}
+            \item increase deterministic noise, so the tendency to overfit will increase
+            \item less likely to fit the noise as less option to choose, so the tendency to overfit will decrease
+        \end{enumerate}
+    However, with less data, simple model with more deterministic noise may have better performance, while complex model will have better performance with less deterministic nose if more data provided to lower the impact of noise. Thus, the tendency to overfit for simpler model depends on the number of data we have. If we have more data then the deterministic noise will increase and overfit will happen. On the other hand, the robustness plays an important role when limited number of data is provided thus decrease the tendency to overfit.
+\end{enumerate}
+
+\section{Exercise 4.5}
+
+\begin{enumerate}[a)]
+    \item \math{T = I^{Q + 1}}, where \math{I^{Q + 1}} is an indentity matrix with \math{Q + 1} dimension. By definition, we have: 
+    \begin{equation}
+        w^TT^TTw = w^TI^{{Q+1}^T}I^{Q+1}w = w^Tw = \sum^Q_{q = 0}w_q^2 \leq C
+    \end{equation}
+    \item let \math{T} be a matrix of \math{1 \times Q} of 1's, so by definition we may have:
+    \begin{equation}
+        w^TT^TTw = 
+        \begin{bmatrix} w_0 & w_1 & \dots & w_q \end{bmatrix}
+        \begin{bmatrix} 1 \\ \vdots \\ 1 \end{bmatrix}
+        \begin{bmatrix} 1 & \dots & 1 \end{bmatrix}
+        \begin{bmatrix} w_0 \\ w_1 \\ \vdots \\ w_q \end{bmatrix}
+ = \sum^Q_{q = 0}w_q \sum^Q_{q = 0}w_q = (\sum^Q_{q = 0}w_q)^2 \leq C
+    \end{equation}
+\end{enumerate}
+
+\section{Exercise 4.6}
+
+The hard-order constraint, since limiting \math{w} does not avoid choosing a complex model. For soft-order constraint, a larger or smaller weight vector does not affect the sign of the result, as long as \math{\alpha > 0}. However, a hard-order constraint prevent model to use unnecessary weights and limit the overfit effectively. 
+
+\section{Exercise 4.7}
+
+\begin{enumerate}[a)]
+    \item 
+    \begin{equation}
+        \begin{split}
+            \sigma^2_{val} &= Var_D_{val}[E_{val}(g^-)] \\
+            &= Var_D_{val}[\frac{1}{K}\sum_{x_n\in D_{val}}e(g^-(x_n), y_n] \\
+            &= \frac{1}{K^2}Var_D_{val}[e(g^-(x_n), y_n] \\
+            &= \frac{1}{K^2}KVar_x[e(g^-(x), y)] \\
+            &= \frac{1}{K}\sigma^2(g^-)
+            \end{split}
+    \end{equation}
+    \item From question, we have \math{e(g^-(x), y)) = [g^-(x) \neq y]}, so \math{E[e(g^-)(x), y)] = P[e(g^-(x), y)] = P[g^-(x) \neq y]}
+    \begin{equation}
+        \begin{split}
+             \sigma_{val}^2 &= \frac{1}{K} Var_x[e(g^-(x_n), y_n)] \\
+            &= \frac{1}{K}(E[e(g^-(x_n), y_n)^2] - E[e(g^-(x_n), y_n)]^2) \\
+            &= \frac{1}{K}(E[e(g^-(x_n), y_n)] - E[e(g^-(x_n), y_n)]^2)
+            \text{  since  } e = e^2 \\
+            &= \frac{P[g^-(x) \neq y] - P[g^-(x) \neq y]^2}{K}
+        \end{split}
+    \end{equation}
+    \item From part b), 
+    \begin{equation}
+        \begin{split}
+            \sigma^2_{val} &= \frac{(P - P^2)}{K} \\
+            &= \frac{-(P - \frac{1}{2})^2 + \frac{1}{4}}{K} 
+        \end{split}
+    \end{equation}
+    The maximum is when \math{P - \frac{1}{2} = 0}, so \math{\sigma^2_{val} \leq \frac{1}{4K}}
+    \item No, from part b) we may derived \math{Var_{D_{val}}[E_{val}(g^-)] = \frac{E[e]^2 - E[e^2]}{K}}, where e is the unbounded squared error. As the variance contains such unbounded terms, there will be no uniform upper bound for it.
+    \item Higher, since limited data points will give worse prediction to the \math{f}, rising the expected error. At the same time, the higher mean implies high variances.
+    \item From part a), we have \math{\sigma_{val}^2 = \frac{\sigma^2(g^-)}{K}}. If the size of the validation set increase, K will increase. However, the size of the training set will decrease, which brings bad g, increasing the variance. Thus, \math{E_{out}} will be lower when K is relatively smaller and increase when less and less data used for training 
+\end{enumerate}
+
+\section{Exercise 4.8}
+
+Yes, since the validation set does not participate in the model selection process but only the training set. 
+
+\end{document}

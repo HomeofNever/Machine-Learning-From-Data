@@ -1,0 +1,163 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{datetime}
+\usepackage{enumerate}
+\usepackage{textcomp}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+
+\title{\bf \Large ASSIGNMENT 2}
+\author{Xinhao Luo}
+\date{\today}
+
+\def\math#1{$#1$}
+
+\setlength{\textheight}{8.5in}
+\setlength{\textwidth}{6.5in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in}
+\voffset0.0in
+
+\begin{document}
+\maketitle
+\medskip
+
+\section{Exercise 1.13}
+
+\begin{enumerate}[a)]
+    \item There are two cases:
+        \begin{enumerate}[1)]
+            \item \math{h(x) = f(x)} but \math{y \neq f(x)}: \math{(1 - \mu) * (1 - \lambda)}
+            \item \math{h(x) \neq f(x)} but \math{y = f(x)}: \math{\mu * \lambda}
+        \end{enumerate}
+    So the \math{P[E] = (1 - \mu) * (1 - \lambda) + \mu * \lambda}
+    \item \math{\lambda = 0.5}, as in this case, the noise is completely random and independent to \math{h}
+\end{enumerate}
+
+\section{Exercise 2.1}
+
+\begin{enumerate}[a)]
+    \item \math{m_H(N) = N + 1}. The breakpoint is 2 since we have: 
+        \begin{itemize}
+            \item \math{m_H(1) = 2 = 2^1}
+            \item \math{m_H(2) = 3 < 2^2} 
+        \end{itemize}
+    \item \math{m_H(N) = \frac{N^2}{2} + \frac{N}{2} + 1}. The breakpoint is 3 since we have:
+        \begin{itemize}
+            \item \math{m_H(1) = 2 = 2^1}
+            \item \math{m_H(2) = 4 = 2^2}
+            \item \math{m_H(3) = 7 < 2^3}
+        \end{itemize}
+    \item \math{m_H(N) = 2^N}. It has no breakpoint since \math{m_H(N)} will never be less than \math{2^N}
+\end{enumerate}
+
+\section{Exercise 2.2}
+
+\begin{enumerate}[a)]
+    \item 
+        \begin{enumerate}[i)]
+            \item Since the breakpoint k = 2, we have: 
+                \begin{equation}
+                    \begin{split}
+                        m_H(2) = N + 1 &\leq \sum^{2 - 1}_i{N \choose i} \\
+                        m_H(2) = N + 1 &\leq {N \choose 0} + {N \choose 1} \\
+                        m_H(2) = N + 1 &\leq 1 + N \\
+                    \end{split}
+                \end{equation}
+                Thus, the theorem holds.
+            \item Since the breakpoint k = 3, we have: 
+                \begin{equation}
+                    \begin{split}
+                         m_H(3) = \frac{N^2}{2} + \frac{N}{2} + 1 &\leq \sum^{3 - 1}_i{N \choose i} \\
+                         m_H(3) = \frac{N^2}{2} + \frac{N}{2} + 1 &\leq {N \choose 0} + {N \choose 1} + {N \choose 2} \\
+                         m_H(3) = \frac{N^2}{2} + \frac{N}{2} + 1 &\leq 1 + N + \frac{N * (N - 1)}{2} \\
+                         m_H(3) = \frac{N^2}{2} + \frac{N}{2} + 1 &\leq 1 + N + \frac{N * (N - 1)}{2} \\
+                         m_H(3) = \frac{N^2}{2} + \frac{N}{2} + 1 &\leq 1 +  \frac{N}{2} + \frac{N^2}{2} 
+                    \end{split}
+                \end{equation}
+                Thus, the theorem holds.
+            \item Since there is no breakpoint, the bound does not exist. 
+        \end{enumerate}
+    \item No, prove by contradiction:
+        Assume \math{m_H(N) = N + 2^{[\frac{N}{2}]}} exists, then:
+        \begin{itemize}
+            \item \math{m_H(1) = 1 + 2^{[\frac{1}{2}]} = 2 = 2^1}
+            \item \math{m_H(2) = 2 + 2^{[\frac{2}{2}]} = 4 = 2^2}
+            \item \math{m_H(3) = 3 + 2^{[\frac{3}{2}]} = 5 < 2^1}
+        \end{itemize}
+        While the breakpoint is 3, we have the bound:
+        \begin{equation}
+            m_N(H) \leq 1 + \frac{N}{2} + \frac{N^2}{2}
+        \end{equation}
+        However, \math{m_H(N) = N + 2^{[\frac{N}{2}]}} will grow faster than the bound (not polynomial), which contradicts with our theorem. Thus, the hypothesis does not exist.
+\end{enumerate}
+
+
+\section{Exercise 2.3}
+
+\begin{enumerate}[i)]
+    \item \math{k = 2}, so \math{d_{vc} = 2 - 1 = 1}
+    \item \math{k = 3}, so \math{d_{vc} = 3 - 1 = 2}
+    \item \math{k = \infty}, so \math{d_{vc} = \infty - 1 = \infty}
+\end{enumerate}
+
+\section{Exercise 2.6}
+
+\begin{enumerate}[a)]
+    \item We have \math{E_{out}(g) \leq E_{in}(g) + \sqrt{\frac{1}{2N}ln\frac{2M}{\rho}}}
+        \begin{itemize}
+            \item [Training Error] \math{M = 1000}, \math{N = 400}, \math{\rho = 0.05}, so we have the bound 
+                \begin{equation}
+                    E_{out} \leq E_{in}(g) + \sqrt{\frac{1}{2 * 400}ln\frac{2 * 1000}{0.05}} = E_{in}(g) + 0.115
+                \end{equation}
+            \item [Test Error] \math{M = 1}, \math{N = 200}, \math{\rho = 0.05}, so we have the bound 
+                \begin{equation}
+                    E_{test} \leq E_{in}(g) + \sqrt{\frac{1}{2 * 200}ln\frac{2 * 1}{0.05}} = E_{in}(g) + 0.096
+                \end{equation}
+        \end{itemize}
+        Thus, \math{E_{out}} has higher error bar
+    \item If more examples reserved for testing, there will be less example for training. Even though we now have higher confidence to verify g, we may not be able to find the right g. If we cannot find a good g then verification is useless.
+\end{enumerate}
+
+\section{Problem 1.11}
+
+\math{[E]} means the number of elements in condition E
+
+\begin{itemize}
+    \item [Supermarket] False positive counts 1, where false negative counts 10
+        \begin{equation}
+            E_{in} = \frac{1}{N} \sum_{i = 1}^{N} (1 * [f(x_n) = -1, h(x_n) = 1] + 10 * [f(x_n) = 1, h(x_n) = -1])
+        \end{equation}
+    \item [CIA] False positive counts 1000, where false negative counts 1
+        \begin{equation}
+            E_{in} = \frac{1}{N} \sum_{i = 1}^{N} (1000 * [f(x_n) = -1, h(x_n) = 1] + 1 * [f(x_n) = 1, h(x_n) = -1])
+        \end{equation}
+\end{itemize}
+
+\section{Problem 1.12}
+
+\begin{enumerate}[a)]
+    \item From the question: 
+        \begin{equation}
+            \begin{split}
+                E_{in}(h) &= \sum_{n = 1}^N(h - y_n)^2 \\
+                &= \sum_{n = 1}^N h^2 - 2hy_n + y_n^2 \\
+                &= Nh^2 - 2h\sum_{n = 1}^N y_n + \sum_{n = 1}^N y_n^2 \\
+                &= N(h - \frac{1}{N}\sum_{n = 1}^N y_n) - \frac{1}{N}(\sum_{i = 1}^N y_n)^2 + \sum_{n = 1}^N y_n^2
+            \end{split}
+        \end{equation}
+    Since the \math{\frac{1}{N}(\sum_{i = 1}^N y_n)^2} and \math{\sum_{n = 1}^N y_n^2} are constant, when \math{E_{in}} reaches minimum, we would like to have \math{N(h - \frac{1}{N}\sum_{n = 1}^N y_n) = 0}. Thus \math{h = \frac{1}{N}\sum_{n = 1}^N y_n = h_{mean}}
+    \item Let's assume we have X are samples on the left side of the h, and Y are samples on the right side of h. If h is moving left, we may have increased the right-side elements' deviations and decrease the left-side. The reflected sum on \math{E_{in}} would be \math{\Delta = c * (Y - X)}, where c is the number h decreased. If h is moving right, we have \math{\Delta = c * (X - Y)}. We will have 3 cases here:
+        \begin{itemize}
+            \item [\math{X < Y}] In this case, if we move toward right, c will increase and since \math{X < Y}, \math{\Delta = c * (X - Y) < 0}. \math{E_{in}} will decrease.
+            \item [\math{X > Y}] In this case, if we move toward left, c will increase and since \math{X > Y}, \math{\Delta = c * (Y - X) < 0}. \math{E_{in}} will decrease.
+            \item [\math{X = Y}] In this case, if we move in either direction, c will increase and cause either \math{X < Y} or \math{X > Y}, but with opposite sign, which increases \math{E_{in}}. At this point, \math{E_{in}} is minimum.
+        \end{itemize}
+    In conclusion, when \math{min(E_{in})}, h will have same number of elements on both side, which is the definition of \math{h_{med}}
+    \item \math{h_{mean}} will grow to \math{\infty} as size of the data set is finite while the sum becomes infinity. However, \math{h_{med}} will stay unchanged, since it is bounded to \math{y_\frac{N}{2} + 1} if N is odd, and the \math{y_\frac{N}{2}} the \math{y_\frac{N}{2} + 1} if even. The infinity won't hurt the outcome unless \math{N \leq 2}, which is trival. 
+\end{enumerate}
+
+\end{document}

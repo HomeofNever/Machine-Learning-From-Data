@@ -1,0 +1,121 @@
+.. _calendar:
+
+Machine Learning from Data Spring 2021 Calendar
+=====================================================
+
+We will follow this schedule quite closely as we proceed through the
+semester.  The only changes we anticipate are to Homeworks.
+
+.. image::
+   _images/ML_Calendar.png
+
+..
+  +--------+---------------+--------------+----------+----------------+
+  |**Week**|**Monday**     |**Tuesday**              |**Thursday**    |
+  +========+===============+==============+==========+================+
+  |1       |**May 20**     |**May 21**               |**May 23**      |
+  |        |               |                         |                |
+  |        |Lecture 1      |Lab 0                    |Lecture 2       |
+  |        |               |                         |                |
+  |        |               |                         |Python as a     |
+  |        |Introduction   |Warm-Up                  |calculator      |
+  +--------+---------------+--------------+----------+----------------+
+  |2       |**May 27**     |**May 28**               |**May 30**      |
+  |        |No Class       |                         |                |
+  |        |**Wednesday**  |Lab 1                    |Lecture 4       |
+  |        |Lecture 3      |                         |                |
+  |        |               |Submitty                 |Modules/        |
+  |        |Strings        |                         |Functions       |
+  +--------+---------------+--------------+----------+----------------+
+  |3       |**Jun 3**      |**Jun 4**                |**Jun 6**       |
+  |        |               |                         |                |
+  |        |Lecture 5      |Lab 2                    |Lecture 6       |
+  |        |               |                         |                |
+  |        |Our own        |Framed greeting          |Decisions       |
+  |        |functions      |                         |                |
+  |        |               |                         |                |
+  |        |               |                         |**HW 1 Due      |
+  |        |               |                         |11:59 PM**      |
+  +--------+---------------+--------------+----------+----------------+
+  |4       |**Jun 10**     |**Jun 11**               |**Jun 13**      |
+  |        |               |                         |                |
+  |        |Lecture 7      |Lab 3                    |**Review**      |
+  |        |               |                         |                |
+  |        |Images and     |Functions and decisions  |**EXAM 1 @3PM** |
+  |        |Modules        |                         |                |
+  |        |               |                         |                |
+  |        |               |                         |                |
+  |        |               |                         |                |
+  +--------+---------------+--------------+----------+----------------+
+  |5       |**Jun 17**     |**Jun 18**               |**Jun 20**      |
+  |        |               |                         |                |
+  |        |Lecture 8      |Lab 4                    |Lecture 9       |
+  |        |Lists, part 1  |                         |                |
+  |        |               |                         |                |
+  |        |**HW 2 Due**   |Images                   |Loops, Part 1   |
+  |        | **11:59 PM**  |                         |                | 
+  +--------+---------------+--------------+----------+----------------+
+  |6       |**Jul 1**      |**Jul 2**                |**Jul 4**       |
+  |        |               |                         |                |
+  |        |**No Class**   |**No Class*              |**No Class**    |
+  |        |               |                         |                |
+  |        |               |                         |                |
+  |        |               |                         |                |
+  |        |Summer Break   |Summer Break             |Summer Break    |
+  |        |               |                         |                |
+  +--------+---------------+--------------+----------+----------------+
+  |7       |**Jul 8**      |**Jul 9**                |**Jul 11**      |
+  |        |               |                         |                |
+  |        |Lecture 10     |Lab 5                    |Lecture 11      |
+  |        |               |                         |                |
+  |        |               |Yelp                     |                |
+  |        |Lists,         |                         |Decisions,      |
+  |        |Part 2         |                         | Part 2         |
+  |        |               |                         |**HW 3 due      |
+  |        |               |                         |11:59 PM**      |
+  +--------+---------------+--------------+----------+----------------+
+  |8       |**Jul 15**     |**Jul 16**               |**Jul 18**      |
+  |        |               |                         |                |
+  |        |**Review**     |Lab 6                    |Lecture 12,13   |
+  |        |               |                         |Loops, Part 2   |
+  |        |**Exam 2 @3PM**|Sudoku                   |Files           |
+  |        |               |                         |                |
+  |        |               |                         |**HW 4 Due      |
+  |        |               |                         |11:59 PM**      |
+  +--------+---------------+--------------+----------+----------------+
+  |9       |**Jul 22**     |**Jul 23**               |**Jul 25**      |
+  |        |               |                         |                |
+  |        |Lecture 14     |Lab 7                    |Lecture 15      |
+  |        |               |                         |                |
+  |        |Problem        |Files                    |Sets            |
+  |        |Solving        |                         |                |
+  +--------+---------------+--------------+----------+----------------+
+  |10      |**Jul 29**     |**Jul 30**               |**Aug 1**       |
+  |        |               |                         |                |
+  |        |Lecture 16     |Lab 8                    |Lecture 17      |
+  |        |               |                         |                |
+  |        |Dictionaries 1 |Sets  &                  |Dictionaries 2  |
+  |        |               |Dictionaries             |                |
+  |        |               |                         |                |
+  |        |               |                         |**HW 5 Due      |
+  |        |               |                         |11:59 PM**      |
+  +--------+---------------+--------------+----------+----------------+
+  |11      |**Aug 5**      |**Aug 6**                |**Aug 8**       |
+  |        |               |                         |                |
+  |        |Lecture 18     |Lab 9                    |Lecture 19      |
+  |        |               |                         |                |
+  |        |Classes 1      |Dictionary               |Classes 2       |
+  |        |               |Classes                  |                |
+  |        |               |                         |                |
+  |        |               |                         |                |
+  +--------+---------------+--------------+----------+----------------+
+  |12      |**Aug 12**     |**Aug 13**               |**Aug 15**      |
+  |        |               |                         |                |
+  |        |Lecture 20,21  |Lab 10                   |**Reiew**       |
+  |        |               |                         |                |
+  |        |Searching      |Closest Point            |**Exam 3 @3PM** |
+  |        |Sorting        |                         |                |
+  |        |**HW 6 Due     |                         |                |
+  |        |11:59 pm**     |                         |                |
+  +--------+---------------+--------------+----------+----------------+
+  

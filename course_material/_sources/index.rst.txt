@@ -1,0 +1,60 @@
+.. CS4100/6100 Spring 2021 documentation master file, created by
+   sphinx-quickstart on Mon Jan  8 13:02:28 2018.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+Welcome to Machine Learning with Data - Spring 2021
+=======================================================================
+
+.. toctree::
+   :maxdepth: 1
+
+   Detailed schedule of topics for this class <calendar>
+
+   Lecture notes and exercises <lecture_notes>
+
+
+
+External links
+--------------
+
+- PDF of course syllabus is available on Submitty under Course Materials Folder.
+
+- We will use Submitty for posting of **class exercises** and **homeworks**, for questions/answers
+  related to class, and for submission of homeworks and lecture exercises: https://submitty.cs.rpi.edu/s21/csci4100
+
+- Find class videos here: < https://www.youtube.com/c/DatascienceConcepts/>
+
+
+About Assignments
+---------------------------
+
+1.	Your assignments are due in class on the due date. Clearly label your assignment with: Name, RIN, level of course (4100/6100) and Assignment number.
+2.	Your assignments must be typed. -20% for handwritten assignment.
+3.	You must submit a PDF electronically on submitty.
+4.	Do not submit code unless the assignment explicitly states that. Keep your solutions brief and to the point.
+5.	Assignment 0 does not impact your overall grade but it must be completed by the due date. Failure to do so will result in none of the assignments being graded.
+6.  Assignments are due every **Monday at 11:59:59 pm**.  
+
+Teaching Staff:
+-------------------
+
++-----------------------------------+----------------------------------------------------------+
+|   .. image::                      | **Uzma Mushtaque:** Instructor                           |
+|      _images/Uzma.jpg             |   | Class Hours: TF 10:10 am - 12:00 pm                  |
+|                                   |   | Room: https://rensselaer.webex.com/meet/mushtu       |
+|                                   |   | Email: mushtu@rpi.edu                                |
+|                                   |   | Office Hours: Friday 12-1 pm or By Appointment       |
++-----------------------------------+----------------------------------------------------------+
+|   .. image::                      | ** Rufeng Ma     :** Teaching Assistant                  |
+|       _images/Rufeng.png          |   | Office Hours:Monday 9am-11am                         |
+|                                   |   | Room: https://rensselaer.webex.com/meet/mar6         |
+|                                   |   | Email:  mar6@rpi.edu                                 |
+|                                   |   |                                                      |
++-----------------------------------+----------------------------------------------------------+
+|   .. image::                      | **Richard Massimilla:** Mentor                           |
+|      _images/Richard.png          |   | Office Hours:Wednesday 12-1pm                        |
+|                                   |   | Room: https://rensselaer.webex.com/meet/massir       |
+|                                   |   | Email:  massir@rpi.edu                               |
+|                                   |   |                                                      |
++-----------------------------------+----------------------------------------------------------+
